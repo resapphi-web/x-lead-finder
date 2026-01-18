@@ -23,8 +23,8 @@ scope = ["https://spreadsheets.google.com/feeds",
 creds = ServiceAccountCredentials.from_json_keyfile_name(SHEET_FILE, scope)
 client = gspread.authorize(creds)
 
-leads_sheet = client.open("YourGoogleSheetName").worksheet(LEADS_SHEET_NAME)
-keywords_sheet = client.open("YourGoogleSheetName").worksheet(KEYWORDS_SHEET_NAME)
+leads_sheet = client.open("x_leads").worksheet(LEADS_SHEET_NAME)
+keywords_sheet = client.open("x_leads").worksheet(KEYWORDS_SHEET_NAME)
 
 # Получаем уже существующих пользователей
 existing_usernames = set(leads_sheet.col_values(2))  # B колонка: twitter_username
